@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "HashChrome",
+  "version": "1.1.0",
+  "description": "Proofread text in message boxes using OpenAI!",
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "scripting",
+    "storage",
+    "commands"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "proofread": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+K",
+        "mac": "Command+Shift+K"
+      },
+      "description": "Trigger the Proofread command"
+    }
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

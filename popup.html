@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HashChrome Proofreader</title>
+  <style>
+    /* Style for the popup body */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: whitesmoke;
+      width: 300px;
+      text-align: center;
+    }
+
+    .container {
+      padding: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: auto auto auto auto auto auto auto auto auto;
+      gap: 5px;
+    }
+
+    #logo-container {
+      grid-column: 1/5;
+      grid-row: 1;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: -10px;
+    }
+
+    #logo {
+      width: 30px;
+      height: 30px;
+    }
+
+    #logo-text {
+      font-family: orbitron;
+      font-size: 15px;
+      font-weight: bold;
+      color: #00a9d3;
+
+    }
+
+    /* Heading style */
+    h1 {
+      grid-column: 1/5;
+      grid-row: 2;
+      font-size: 18px;
+      margin-bottom: 20px;
+      border-radius: 3px;
+    }
+
+    #input-container {
+      position: relative;
+      grid-row: 3/4;
+      grid-column: 1/5;
+      padding: 5px 0 0 0;
+    }
+
+    #input-label {
+      position: absolute;
+      left: 60px;
+      top: 0;
+      padding: 0;
+      background-color: whitesmoke;
+
+    }
+
+    /* Input field styling */
+    input[type="password"] {
+      width: 100%;
+      padding-left: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 14px;
+      background-color: whitesmoke;
+      color: black;
+      padding: 15px;
+    }
+
+    input:focus {
+      border-color: #686868;
+      outline: none;
+    }
+
+    input::placeholder {
+      color: gray;
+    }
+
+    input::-webkit-input-placeholder {
+      /* Chrome/Safari */
+      color: gray;
+    }
+
+    input:-moz-placeholder {
+      /* Firefox 18- */
+      color: gray;
+    }
+
+    input::-moz-placeholder {
+      /* Firefox 19+ */
+      color: gray;
+    }
+
+    input:-ms-input-placeholder {
+      /* IE 10+ */
+      color: gray;
+    }
+
+    #message-container {
+      display: grid;
+      grid-column: 1/5;
+      grid-row: 5;
+      grid-template-columns: 8;
+      gap: 0;
+      color: red;
+      visibility: hidden;
+      padding: 0;
+      margin: 0;
+      align-self: stretch;
+    }
+
+    #message {
+      grid-column: 2/8;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      text-align: left;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: 12px;
+    }
+
+    #message-icon {
+      grid-column: 1;
+      font-size: 14px;
+      font-weight: bolder;
+      color: yellow;
+      display: flex;
+      text-align: left;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Button styles */
+    button {
+      width: 100%;
+      max-height: 50px;
+      background-color: #00a9d3;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+      row-gap: 0;
+      padding: 10px;
+    }
+
+    button:hover {
+      background-color: #003d88;
+    }
+
+    /* Styles when the button is clicked (active) */
+    button:active {
+      background-color: #003d88;
+      transform: scale(0.95);
+    }
+
+    #saveApiKey {
+      margin-top: 0;
+      grid-column: 1/5;
+      grid-row: 6;
+    }
+
+    #checkApiKey {
+      display: none;
+      grid-column: 1/3;
+      grid-row: 7;
+    }
+
+    #removeApiKey {
+      display: none;
+      grid-column: 3/5;
+      grid-row: 7;
+    }
+
+    #api-key-message-container {
+      grid-column: 1/5;
+      grid-row: 8;
+      width: 100%;
+      padding: 10px;
+      background-color: rgba(118, 75, 54, 0.05);
+      border-radius: 5px;
+      font-size: 14px;
+      box-sizing: border-box;
+      color: #9b4922;
+      max-width: 100%;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-all;
+      overflow: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      display: none;
+    }
+
+    #api-key-icon {
+      margin-right: 8px;
+      font-size: 18px;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .failure {
+      color: red;
+    }
+
+    #usage {
+      grid-column: 1/5;
+      grid-row: 8;
+      padding-top: 10px;
+      text-align: left;
+    }
+
+    #usage h3 {
+      text-align: left;
+    }
+
+    #usage ol li{
+      line-height: 17px;
+    }
+
+    /* Link (anchor tag) style */
+    #link {
+      grid-column: 1/5;
+      grid-row: 9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    a {
+      margin-top: 10px;
+      color: #764b36;
+      font-size: 12px;
+      color: gray;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: rgb(109, 109, 109);
+    }
+
+
+    .spinner {
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border-left-color: #09f;
+      animation: spin 1s ease infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* On top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      /* background-color: rgba(0, 0, 0, 0.4); */
+      background: rgba(0, 0, 0, 0.7);
+      /* Black with opacity */
+    }
+
+    .modal.show {
+      display: block;
+      opacity: 1;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 35% auto 35%;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      vertical-align: middle;
+      font-size: 14px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+    }
+
+    /* confirmation modal */
+
+    #confirmation-modal {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    #confirmation-modal-content {
+      background: white;
+      margin: auto auto;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 5px;
+      row-gap: 0px;
+    }
+
+    #conf-close {
+      grid-row: 1;
+      grid-column: 9;
+    }
+
+    #confirmation-modal-text {
+      grid-row: 1;
+      grid-column: 1/9;
+      display: flex;
+      justify-content: end;
+    }
+
+    #confirm-remove {
+      grid-row: 2;
+      grid-column: 1/5;
+    }
+
+    #cancel-remove {
+      grid-row: 2;
+      grid-column: 5/9;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="spinner" style="display: none;">
+    <div class="spinner"></div>
+  </div>
+  <div class="container">
+    <div id="logo-container">
+      <img id="logo" src="icon128.png" alt="hashchrome logo">
+      <p id="logo-text">hashchrome</p>
+    </div>
+
+    <h1>Proofread Your Messages on WhatsApp & Slack Instantly</h1>
+    <div>
+    </div class="save-part">
+    <div id="input-container">
+      <label id="input-label">&#x1F511 Enter OpenAI API Key:</label>
+      <input type="password" id="apiKeyInput" placeholder="Your API Key..." required>
+    </div>
+    <button id="saveApiKey">Save API Key</button>
+    <div>
+    </div>
+    <button id="checkApiKey">Key Status</button>
+    <div id="api-key-message-container">
+      <span id="api-key-icon"></span>
+      <span id="api-key-message"></span>
+    </div>
+    <div id="message-container">
+      <span id="message-icon"></span>
+      <span id="message">.</span>
+    </div>
+    <div id="spinner" style="display: none;">
+      <div class="spinner"></div>
+    </div>
+    <button id="removeApiKey">Remove API Key</button>
+
+    <div id="usage">
+      <hr>
+      <h3>&#x1F4DD; How to Proofread</h3>
+
+      <ol>
+        <li>Save your API key.</li>
+        <li>Write your message.</li>
+        <li>Press <b>Ctrl+Shift+K</b> (Mac: <b>Cmd+Shift+K</b>) <i>OR</i> right-click and choose "Proofread".</li>
+      </ol>
+    </div>
+
+    <div id="link"> <a href="https://sazaktechs.com/hashchrome.html" target="_blank">&#x1F4DC How can I get an API
+        Key?</a></div>
+  </div>
+
+  <!-- Modal -->
+  <div id="error-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="error-message">An error occurred!</p>
+    </div>
+  </div>
+
+  <div id="confirmation-modal">
+    <div id="confirmation-modal-content">
+      <div id="conf-close">
+        <span id="conf-close" class="close">&times;</span>
+      </div>
+
+      <p id="confirmation-modal-text">Are you sure you want to remove the API key? </p>
+      <button id="confirm-remove">Yes</button>
+      <button id="cancel-remove">No</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
