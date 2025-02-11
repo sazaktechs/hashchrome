@@ -224,14 +224,16 @@ document.addEventListener('DOMContentLoaded', function () {
       iconMessage.style.color = "yellow";
       document.getElementById('message').style.color = "red";
       document.getElementById("message").textContent = "This field cannot be empty!";
-    } else if (!/^sk-[A-Za-z0-9]{32,51}$/.test(apiKeyValue)) {
+    } 
+    else if (!(/^sk-proj-[A-Za-z0-9_-]{30,}$/.test(apiKeyValue) || /^[a-zA-Z0-9]{30,}$/.test(apiKeyValue))) {
       messageContainer.style.display = "grid";
       messageContainer.style.visibility = 'visible';
       iconMessage.textContent = "\u26A0"; // Unicode escape for ⚠️
       iconMessage.style.color = "yellow";
       document.getElementById('message').style.color = "red";
       document.getElementById("message").textContent = "Invalid API key format.";
-    } else {
+    } 
+    else {
       const encryptedKey = btoa(apiKeyValue); 
       // Send the API key to background.js
       chrome.runtime.sendMessage({ type: 'setApiKey', encryptedKey }, (response) => {

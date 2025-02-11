@@ -8,8 +8,9 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 20px;
-      background-color: whitesmoke;
+      padding: 0;
+      padding: 15px;
+      background-color: #f5f5f5;
       width: 300px;
       text-align: center;
     }
@@ -20,6 +21,8 @@
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-rows: auto auto auto auto auto auto auto auto auto;
       gap: 5px;
+      background-color: rgb(36, 36, 36);
+      background-color: #f5f5f5;
     }
 
     #logo-container {
@@ -27,8 +30,10 @@
       grid-row: 1;
       display: flex;
       flex-direction: row;
+      justify-content: left;
       align-items: center;
-      margin-bottom: -10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgb(221, 221, 221);
     }
 
     #logo {
@@ -37,10 +42,10 @@
     }
 
     #logo-text {
-      font-family: orbitron;
-      font-size: 15px;
-      font-weight: bold;
-      color: #00a9d3;
+      margin-top: -4px;
+      height: 24px;
+      z-index: 0;
+      margin-left: 1px;
 
     }
 
@@ -66,7 +71,7 @@
       top: 0;
       padding: 0;
       background-color: whitesmoke;
-
+      padding-right: 3px;
     }
 
     /* Input field styling */
@@ -226,15 +231,16 @@
     #usage {
       grid-column: 1/5;
       grid-row: 8;
-      padding-top: 10px;
       text-align: left;
+      border-top: 1px solid rgb(221, 221, 221);;
+      margin-top: 20px;
     }
 
     #usage h3 {
       text-align: left;
     }
 
-    #usage ol li{
+    #usage ol li {
       line-height: 17px;
     }
 
@@ -388,23 +394,25 @@
   <div id="spinner" style="display: none;">
     <div class="spinner"></div>
   </div>
+
   <div class="container">
+
     <div id="logo-container">
       <img id="logo" src="icon128.png" alt="hashchrome logo">
-      <p id="logo-text">hashchrome</p>
+      <img id="logo-text" src="HashChrome.png" alt="hashchrome logo">
     </div>
 
     <h1>Proofread Your Messages on WhatsApp & Slack Instantly</h1>
     <div>
     </div class="save-part">
     <div id="input-container">
-      <label id="input-label">&#x1F511 Enter OpenAI API Key:</label>
+      <label id="input-label">&#x1F511 Enter OpenAI API Key</label>
       <input type="password" id="apiKeyInput" placeholder="Your API Key..." required>
     </div>
     <button id="saveApiKey">Save API Key</button>
     <div>
     </div>
-    <button id="checkApiKey">Key Status</button>
+    <button id="checkApiKey">API Key Status</button>
     <div id="api-key-message-container">
       <span id="api-key-icon"></span>
       <span id="api-key-message"></span>
@@ -419,7 +427,6 @@
     <button id="removeApiKey">Remove API Key</button>
 
     <div id="usage">
-      <hr>
       <h3>&#x1F4DD; How to Proofread</h3>
 
       <ol>
