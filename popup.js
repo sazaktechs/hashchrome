@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
         if (response.errorMessage) {
           hideSpinner();
-          showError("\u274C Your API key is invalid!");
+          showError(`\u274C ${response.errorMessage}`);
           // Set failure icon and message
           iconElement.textContent = "\u274C"; // Unicode escape for ❌
           iconElement.className = "failure"; // Red color

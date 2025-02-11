@@ -191,10 +191,18 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
                   sendResponse({ isKeyValid: true });
                 }
 
-              })
+              }).catch((error) => {
+                if (error.message === 'Failed to fetch') {
+                  sendResponse({ errorMessage: "No internet connection. Please check your network and try again." });
+                } else {
+                  sendResponse({ errorMessage: "An unexpected error occurred. Please try again." });
+                }
+                // Handle unexpected errors
+
+              });
           } catch (error) {
             // Network errors, fetch errors, etc.
-            console.error("Client-side API Key Validation Fetch Error:", error);
+            sendResponse({ errorMessage: "An unexpected error occurred. Please try again." });
             return false; // Error during validation request
           }
 
