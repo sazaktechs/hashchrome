@@ -232,7 +232,8 @@
       grid-column: 1/5;
       grid-row: 8;
       text-align: left;
-      border-top: 1px solid rgb(221, 221, 221);;
+      border-top: 1px solid rgb(221, 221, 221);
+      ;
       margin-top: 20px;
     }
 
@@ -325,6 +326,43 @@
       font-size: 14px;
     }
 
+    #error-message{
+      display: none;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      /* To have single borders */
+      font-family: sans-serif;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      /* Light grey background for headers */
+      font-weight: bold;
+      /* Make header text bold */
+      text-align: center;
+      /* Align header text to the left */
+      padding: 8px;
+      /* Add padding for spacing */
+      border-bottom: 1px solid #ddd;
+      /* Bottom border to separate rows */
+    }
+
+    td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+      /* Bottom border to separate rows */
+    }
+
+    tr:last-child th,
+    tr:last-child td {
+      width: 300px;
+      border-bottom: none;
+      /* Remove border from the last row */
+    }
+
     .close {
       color: #aaa;
       float: right;
@@ -406,7 +444,7 @@
     <div>
     </div class="save-part">
     <div id="input-container">
-      <label id="input-label">&#x1F511 Enter OpenAI API Key</label>
+      <label id="input-label">&#x1F511 OpenAI or Gemini API Key</label>
       <input type="password" id="apiKeyInput" placeholder="Your API Key..." required>
     </div>
     <button id="saveApiKey">Save API Key</button>
@@ -444,7 +482,24 @@
   <div id="error-modal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <p id="error-message">An error occurred!</p>
+      <p id="error-message"></p>
+      <table id="table">
+        <tbody>
+          <tr>
+            <th>Model</th>
+          </tr>
+          <tr>
+            <td id="model-name"></td>
+          </tr>
+          <tr>
+            <th>Api status</th>
+          </tr>
+          <tr>
+            <td id="api-status"></td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
   </div>
 

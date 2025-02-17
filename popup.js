@@ -21,6 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const cancelRemoveBtn = document.getElementById("cancel-remove");
   const closeConfirmationBtn = document.getElementById("conf-close");
 
+  const table = document.getElementById("table");
+  const modelName = document.getElementById("model-name");
+  const apiStatus = document.getElementById("api-status");
+
   inputField.addEventListener("input", function () {
     if (inputField.value.trim() !== "") {
       messageContainer.style.display = "none";
@@ -35,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
           messageContainer.style.display = "grid";
           // Set failure icon and message
           iconMessage.textContent = "\u26A0"; // Unicode escape for ⚠️
-          iconMessage.style.color = "yellow"; 
+          iconMessage.style.color = "yellow";
           inputMessage.textContent = message;
         }
       });
@@ -43,9 +47,21 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Function to show the modal with a specific error message
-  function showError(message) {
-    errorMessage.textContent = message; // Set the error message
+  function showError(modelname, apistatus) {
+    // errorMessage.textContent = message; // Set the error message
+    errorMessage.style.display = "none";
+    table.style.display = "flex";
     modal.style.display = "flex"; // Show the modal
+    modelName.textContent = modelname;
+    apiStatus.textContent = apistatus;
+  }
+
+  // Function to show the remove modal 
+  function showRemoveModal(message) {
+    errorMessage.style.display = "block";
+    table.style.display = "none";
+    modal.style.display = "flex"; // Show the modal
+    errorMessage.textContent = message; // Set the error message
   }
 
   // Function to close the modal
@@ -63,7 +79,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.type === "error") {
-      showError(request.message);
+      chrome.storage.local.get(["model"], function (result) {
+        const model = result.model;
+        showError(model, request.message);
+      });
+
 
     }
     return true; // Required for async responses
@@ -90,47 +110,13 @@ document.addEventListener('DOMContentLoaded', function () {
     confirmationModal.style.display = "none";
   });
 
-  confirmRemoveBtn.addEventListener("click", () => {
-    messageContainer.style.display = "none";
-    messageContainer.style.visibility = 'hidden';
-    document.getElementById("api-key-message").textContent = "";
-    iconMessage.textContent = "";
-    iconElement.textContent = "";
-    apiKeyInput.value = "";
-    chrome.runtime.sendMessage({ type: 'removeApiKey', }, (response) => {
-
-      if (response.noApiKey) {
-        messageContainer.style.display = "grid";
-        messageContainer.style.visibility = 'visible';
-        iconMessage.style.visibility = 'visible';
-        // Set failure icon and message
-        iconMessage.textContent = "\u26A0"; // Unicode escape for ⚠️
-        iconMessage.style.color = "yellow";
-        document.getElementById("message").style.color = "red";
-        document.getElementById("message").textContent = "Please provide an API key!";
-
-        removeApiKey.style.display = 'none';
-        checkApiKey.style.display = 'none';
-      } else {
-
-        if (response.success) {
-          // Show success message to user
-          removeApiKey.style.display = 'none';
-          checkApiKey.style.display = 'none';
-          messageElement.textContent = "Your api key removed successfully!"
-          confirmationModal.style.display = "none";
-          showError("\u2705 Your api key removed successfully!"); // "\u2705" Unicode escape for ✅
-        } else {
-          // Show error message to user
-          messageElement.textContent = "Error!"
-        }
-      }
-    });
-  });
-
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.type === "error") {
-      showError(request.message);
+      chrome.storage.local.get(["model"], function (result) {
+        const model = result.model;
+        showError(model, request.message);
+      });
+
 
     }
     return true; // Required for async responses
@@ -210,7 +196,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Save button click handler
   saveApiKey.addEventListener('click', function () {
-
     messageElement.textContent = "";
     iconElement.textContent = "";
     iconMessage.style.visibility = "visible";
@@ -224,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
       iconMessage.style.color = "yellow";
       document.getElementById('message').style.color = "red";
       document.getElementById("message").textContent = "This field cannot be empty!";
-    } 
+    }
     else if (!(/^sk-proj-[A-Za-z0-9_-]{30,}$/.test(apiKeyValue) || /^[a-zA-Z0-9]{30,}$/.test(apiKeyValue))) {
       messageContainer.style.display = "grid";
       messageContainer.style.visibility = 'visible';
@@ -232,18 +217,31 @@ document.addEventListener('DOMContentLoaded', function () {
       iconMessage.style.color = "yellow";
       document.getElementById('message').style.color = "red";
       document.getElementById("message").textContent = "Invalid API key format.";
-    } 
+    }
     else {
-      const encryptedKey = btoa(apiKeyValue); 
+
+      try {
+        if (/^sk-proj-[A-Za-z0-9_-]{30,}$/.test(apiKeyValue)) {
+          model = "gpt-4o-mini";
+        } else if (/^[a-zA-Z0-9]{30,}$/.test(apiKeyValue)) {
+          model = "gemini-2.0-flash-lite-preview-02-05";
+        }
+      } catch (error) {
+      }
+
+
+
+
+      const encryptedKey = btoa(apiKeyValue);
       // Send the API key to background.js
-      chrome.runtime.sendMessage({ type: 'setApiKey', encryptedKey }, (response) => {
+      chrome.runtime.sendMessage({ type: 'setApiKey', encryptedKey: encryptedKey, model: model }, (response) => {
         if (response.success) {
           // Show success message to user
           messageContainer.style.display = "grid";
           messageContainer.style.visibility = 'visible';
           iconMessage.style.visibility = "visible";
           iconMessage.textContent = "\u2705"; // Unicode escape for ✅
-          iconMessage.style.color = "green"; 
+          iconMessage.style.color = "green";
           document.getElementById('message').style.color = "green"; // Optional: Style the message
           document.getElementById("message").textContent = "Your API key was saved successfully!";
           chrome.storage.local.set({ popupMessage: "" });
@@ -288,27 +286,82 @@ document.addEventListener('DOMContentLoaded', function () {
         hideSpinner();
       } else {
         if (response.errorMessage) {
-          hideSpinner();
-          showError(`\u274C ${response.errorMessage}`);
-          // Set failure icon and message
-          iconElement.textContent = "\u274C"; // Unicode escape for ❌
-          iconElement.className = "failure"; // Red color
-          // Display the error message
-          messageElement.textContent = response.errorMessage;
+          chrome.storage.local.get(["model"], function (result) {
+            const model = result.model;
+            hideSpinner();
+            showError(model, `\u274C ${response.errorMessage}`);
+            // Set failure icon and message
+            iconElement.textContent = "\u274C"; // Unicode escape for ❌
+            iconElement.className = "failure"; // Red color
+            // Display the error message
+            messageElement.textContent = response.errorMessage;
+          });
+
 
         }
         else {
-          showError("\u2705 Your API key is valid");
-          hideSpinner();
 
-          iconElement.textContent = "\u2705"; // Unicode escape for ✅
-          iconElement.className = "success"; // Green color
-          messageElement.textContent = "Your API key is valid";
+          chrome.storage.local.get(["model"], function (result) {
+            const model = result.model;
+            const message = "\u2705 Your API key is valid";
+            showError(model, message);
+            hideSpinner();
+
+            iconElement.textContent = "\u2705"; // Unicode escape for ✅
+            iconElement.className = "success"; // Green color
+            messageElement.textContent = "Your API key is valid";
+          });
+
+
         }
       }
 
     });
 
+  });
+
+  confirmRemoveBtn.addEventListener("click", () => {
+    messageContainer.style.display = "none";
+    messageContainer.style.visibility = 'hidden';
+    document.getElementById("api-key-message").textContent = "";
+    iconMessage.textContent = "";
+    iconElement.textContent = "";
+    apiKeyInput.value = "";
+    chrome.runtime.sendMessage({ type: 'removeApiKey', }, (response) => {
+
+      if (response.noApiKey) {
+        messageContainer.style.display = "grid";
+        messageContainer.style.visibility = 'visible';
+        iconMessage.style.visibility = 'visible';
+        // Set failure icon and message
+        iconMessage.textContent = "\u26A0"; // Unicode escape for ⚠️
+        iconMessage.style.color = "yellow";
+        document.getElementById("message").style.color = "red";
+        document.getElementById("message").textContent = "Please provide an API key!";
+
+        removeApiKey.style.display = 'none';
+        checkApiKey.style.display = 'none';
+      } else {
+
+        if (response.success) {
+          // Show success message to user
+
+          chrome.storage.local.get(["model"], function (result) {
+            const model = result.model;
+            removeApiKey.style.display = 'none';
+            checkApiKey.style.display = 'none';
+            messageElement.textContent = "Your api key removed successfully!"
+            confirmationModal.style.display = "none";
+            showRemoveModal("\u2705 Your api key removed successfully!"); // "\u2705" Unicode escape for ✅
+          });
+
+
+        } else {
+          // Show error message to user
+          messageElement.textContent = "Error!"
+        }
+      }
+    });
   });
 
 });

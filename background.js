@@ -4,7 +4,7 @@ let geminiapi = 0;
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'setApiKey') {
     const decryptedKey = atob(message.encryptedKey); // Decrypt
-    chrome.storage.local.set({ apiKey: message.encryptedKey }, () => {
+    chrome.storage.local.set({ apiKey: message.encryptedKey, model: message.model }, () => {
       // Send a response back to popup.js indicating success
       sendResponse({ success: true });
 
@@ -112,6 +112,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
                 // Only process data if it is valid
                 if (data) {
+
                   sendResponse({ isKeyValid: true });
 
                 }
@@ -131,7 +132,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             sendResponse({ errorMessage: "An unexpected error occurred. Please try again." });
           }
         } else {  // gemini key
-          const validationUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${decryptedKey}`; // API key in URL (less secure!)
+          const validationUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite-preview-02-05:generateContent?key=${decryptedKey}`; // API key in URL (less secure!)
 
           const validationData = {
             "contents": [
@@ -295,10 +296,6 @@ function execute() {
         } else {
           storedVariable = myApiKey;
 
-          // if (!/^sk-proj-[A-Za-z0-9_-]{32,1000}$/.test(myApiKey)) {
-          //   geminiapi = true;
-          // }
-
         }
       });
     } catch (error) {
@@ -453,10 +450,8 @@ async function showText(storedVariable, tabId) {
     } catch (error) {
     }
   }
-  if (/^sk-proj-[A-Za-z0-9_-]{32,1000}$/.test(storedVariable)) {
+  if (/^sk-proj-[A-Za-z0-9_-]{32,}$/.test(storedVariable)) {
     try {
-      console.log("test");
-
       const apiKey = storedVariable;
       const url = "https://api.openai.com/v1/chat/completions";
 
@@ -520,7 +515,7 @@ async function showText(storedVariable, tabId) {
       chrome.runtime.sendMessage({ action: 'hideSpinner' });
     }
   } else {
-    console.log("gemini test");
+
     const apiKey = storedVariable;
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite-preview-02-05:generateContent?key=${apiKey}`;
 
