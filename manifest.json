@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "HashChrome",
-  "version": "1.1.0",
-  "description": "Proofread text in message boxes using OpenAI!",
+  "name": "HashChrome: Instant, private, multilingual grammar checker",
+  "version": "2.0",
+  "description": "Instantly enhance your WhatsApp & Slack chats with private, secure, multilingual grammar checking powered by ChatGPT & Gemini.",
   "permissions": [
     "contextMenus",
     "activeTab",
