@@ -1,5 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/nkmhiiaddgijccgppefkaedjddnhnomd.svg)](https://chrome.google.com/webstore/detail/nkmhiiaddgijccgppefkaedjddnhnomd)
+![Project Logo](icon128.png)
 # HashChrome
 
 ## Description
