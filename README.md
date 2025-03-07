@@ -24,8 +24,11 @@ HashChrome is a Chrome extension that helps users proofread their messages on Wh
 - If no text is selected, the entire message is proofread; otherwise, only the selected portion is checked.
 - Users can verify if their API key is valid and remove it when needed.
 
-![slack_before](images/slack_before.jpg)
-![slack_after](images/slack_after.jpg)
+<p align="center">
+  <img src="images/slack_before.jpg" width="300">
+  <br>
+  <img src="images/slack_after.jpg" width="300">
+</p>
 
 ## Installation Guide
 
