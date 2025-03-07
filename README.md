@@ -26,7 +26,6 @@ HashChrome is a Chrome extension that helps users proofread their messages on Wh
 
 <p align="center">
   <img src="images/slack_before.jpg" width="300">
-  <br>
   <img src="images/slack_after.jpg" width="300">
 </p>
 
