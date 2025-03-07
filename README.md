@@ -8,10 +8,10 @@
 
 ## Description
 
-HashChrome is a Chrome extension that helps users proofread their messages on WhatsApp and Slack using OpenAI’s API.
+HashChrome is a Chrome extension that helps users proofread their messages on WhatsApp and Slack using OpenAI or Gemini API.
 
 ### Key Features
-- Users enter their OpenAI API key in the extension’s popup and save it.
+- Users enter their OpenAI or Gemini API key in the extension’s popup and save it.
 - Press `Ctrl+Shift+K` (Windows/Linux) or `Cmd+Shift+K` (Mac) to proofread.
 - Alternatively, right-click and select "Proofread."
 - If no text is selected, the entire message is proofread; otherwise, only the selected portion is checked.
@@ -39,7 +39,7 @@ HashChrome is a Chrome extension that helps users proofread their messages on Wh
 
 ## Usage Instructions
 1. Click on the HashChrome extension icon.
-2. Enter your OpenAI API key and save it.
+2. Enter your OpenAI or Gemini API key and save it.
 3. Proofread messages:
    - Press `Ctrl+Shift+K` (Windows/Linux) or `Cmd+Shift+K` (Mac).
    - Or right-click a message and select **Proofread**.
