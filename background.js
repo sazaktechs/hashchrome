@@ -116,7 +116,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
                   sendResponse({ isKeyValid: true });
 
                 }
-                
+
               })
               .catch((error) => {
                 if (error.message === 'Failed to fetch') {
@@ -313,10 +313,15 @@ function execute() {
   });
 }
 
-// Create a context menu that only appears inside text boxes
+// Listen for the extension's installation event.
 chrome.runtime.onInstalled.addListener(() => {
-  // this page automatically opens when the extension installed
-  chrome.tabs.create({ url: "https://sazaktechs.com/hashchrome.html" });
+  // Check if the event was triggered because of a first-time installation.
+  // 'details.reason' can be 'install', 'update', or 'chrome_update'.
+  if (details.reason === 'install') {
+    // this page automatically opens when the extension installed
+    chrome.tabs.create({ url: "https://sazaktechs.com/hashchrome.html" });
+  }
+  // Create a context menu that only appears inside text boxes
   chrome.contextMenus.create({
     id: "proofRead",
     title: "Proofread with HashChrome",
