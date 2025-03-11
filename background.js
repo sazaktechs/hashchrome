@@ -314,7 +314,7 @@ function execute() {
 }
 
 // Listen for the extension's installation event.
-chrome.runtime.onInstalled.addListener(() => {
+chrome.runtime.onInstalled.addListener((details) => {
   // Check if the event was triggered because of a first-time installation.
   // 'details.reason' can be 'install', 'update', or 'chrome_update'.
   if (details.reason === 'install') {
