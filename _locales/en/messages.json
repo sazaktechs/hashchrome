@@ -1,0 +1,11 @@
+{
+    "extension_name": {
+      "message": "HashChrome: Instant, private, multilingual grammar checker",
+      "description": "The name of the extension"
+    },
+    "extension_description": {
+      "message": "Instantly enhance your WhatsApp & Slack chats with private, secure, multilingual grammar checking powered by ChatGPT & Gemini.",
+      "description": "The description of the extension"
+    }
+    
+  }

@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "HashChrome: Instant, private, multilingual grammar checker",
+  "default_locale": "en",
+  "name": "__MSG_extension_name__",
   "version": "2.1.0",
-  "description": "Instantly enhance your WhatsApp & Slack chats with private, secure, multilingual grammar checking powered by ChatGPT & Gemini.",
+  "description": "__MSG_extension_description__",
   "permissions": [
     "contextMenus",
     "activeTab",
