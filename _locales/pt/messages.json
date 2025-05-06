@@ -1,0 +1,10 @@
+{
+    "extension_name": {
+      "message": "HashChrome: Verificador Gramatical Multilíngue com IA",
+      "description": "O nome da extensão"
+    },
+    "extension_description": {
+      "message": "Corrija instantaneamente seus erros gramaticais na web.",
+      "description": "A descrição da extensão"
+    }
+  }

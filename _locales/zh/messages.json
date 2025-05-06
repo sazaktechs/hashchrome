@@ -1,0 +1,11 @@
+{
+    "extension_name": {
+      "message": "HashChrome：AI驱动的多语言语法检查器",
+      "description": "扩展的名称"
+    },
+    "extension_description": {
+      "message": "即时校对您在网页上的语法错误。",
+      "description": "扩展的描述"
+    }
+  }
+  

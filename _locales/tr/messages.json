@@ -1,10 +1,10 @@
 {
   "extension_name": {
-    "message": "HashChrome: ChatGPT Destekli Yazım Düzenleyicisi",
-    "description": "Uzantının adı"
+    "message": "HashChrome: Yapay Zekâ Destekli Çok Dilli Yazım Düzenleyicisi",
+    "description": "Eklentinin adı"
   },
   "extension_description": {
-    "message": "WhatsApp ve Slack mesajlarınızı hızlı ve kolay bir şekilde düzenleyin. HashChrome, ChatGPT ve Gemini kullanarak mesajlarınızı dilbilgisi ve yazım açısından kontrol eder.",
-    "description": "Uzantının açıklaması"
+    "message": "Web’deki dilbilgisi hatalarınızı anında düzeltin.",
+    "description": "Eklentinin açıklaması"
   }
 }

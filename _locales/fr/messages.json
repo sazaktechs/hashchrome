@@ -1,0 +1,11 @@
+{
+    "extension_name": {
+      "message": "HashChrome : Correcteur Grammatial Multilingue IA",
+      "description": "Le nom de l’extension"
+    },
+    "extension_description": {
+      "message": "Relisez instantanément vos fautes de grammaire sur le web.",
+      "description": "La description de l’extension"
+    }
+  }
+  

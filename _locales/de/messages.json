@@ -1,0 +1,11 @@
+{
+    "extension_name": {
+      "message": "HashChrome: KI-gestützter Mehrsprachiger Grammatikprüfer",
+      "description": "Der Name der Erweiterung"
+    },
+    "extension_description": {
+      "message": "Korrigieren Sie Ihre Grammatikfehler im Web sofort.",
+      "description": "Die Beschreibung der Erweiterung"
+    }
+  }
+  
