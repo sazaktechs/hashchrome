@@ -409,11 +409,7 @@ async function showText(storedVariable, tabId) {
 
 
   } catch (error) {
-    // whatsapp
     try {
-      // textArea = document.querySelector(
-      //   '#main .copyable-area [contenteditable="true"][role="textbox"]'
-      // );
       textArea = document.querySelectorAll(
         'input[type="text"], input[type="search"], textarea, [contenteditable="true"]'
       );
