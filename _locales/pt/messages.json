@@ -6,5 +6,45 @@
     "extension_description": {
       "message": "Corrija instantaneamente seus erros gramaticais na web.",
       "description": "A descrição da extensão"
+    },
+    "popup_title": {
+      "message": "Verificador Gramatical Instantâneo",
+      "description": "Título do popup"
+    },
+    "popup_input_label": {
+      "message": "Sua chave API do OpenAI ou Gemini",
+      "description": "Rótulo do campo de entrada no popup"
+    },
+    "popup_save_button": {
+      "message": "Salvar chave API",
+      "description": "Botão para salvar a chave API no popup"
+    },
+    "popup_check_button": {
+      "message": "Status da chave API",
+      "description": "Botão para verificar o status da chave API no popup"
+    },
+    "popup_remove_button": {
+      "message": "Remover chave API",
+      "description": "Botão para remover a chave API no popup"
+    },
+    "popup_usage_instructions": {
+      "message": "Como revisar",
+      "description": "Instruções de uso no popup"
+    },
+    "popup_usage_step1": {
+      "message": "Salve sua chave API.",
+      "description": "Primeiro passo nas instruções de uso"
+    },
+    "popup_usage_step2": {
+      "message": "Escreva sua mensagem.",
+      "description": "Segundo passo nas instruções de uso"
+    },
+    "popup_usage_step3": {
+      "message": "Pressione Ctrl+Shift+K (Mac: Cmd+Shift+K) ou clique com o botão direito e escolha 'Revisar'.",
+      "description": "Terceiro passo nas instruções de uso"
+    },
+    "popup_link_text": {
+      "message": "Como posso obter uma chave API?",
+      "description": "Texto do link no popup"
     }
   }
