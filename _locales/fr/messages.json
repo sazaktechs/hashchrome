@@ -6,6 +6,45 @@
     "extension_description": {
       "message": "Relisez instantanément vos fautes de grammaire sur le web.",
       "description": "La description de l’extension"
+    },
+    "popup_title": {
+      "message": "Correcteur de grammaire instantané",
+      "description": "Titre de la fenêtre contextuelle"
+    },
+    "popup_input_label": {
+      "message": "Votre clé API OpenAI ou Gemini",
+      "description": "Étiquette du champ de saisie dans la fenêtre contextuelle"
+    },
+    "popup_save_button": {
+      "message": "Enregistrer la clé API",
+      "description": "Bouton pour enregistrer la clé API dans la fenêtre contextuelle"
+    },
+    "popup_check_button": {
+      "message": "Statut de la clé API",
+      "description": "Bouton pour vérifier le statut de la clé API dans la fenêtre contextuelle"
+    },
+    "popup_remove_button": {
+      "message": "Supprimer la clé API",
+      "description": "Bouton pour supprimer la clé API dans la fenêtre contextuelle"
+    },
+    "popup_usage_instructions": {
+      "message": "Comment relire",
+      "description": "Instructions d'utilisation dans la fenêtre contextuelle"
+    },
+    "popup_usage_step1": {
+      "message": "Enregistrez votre clé API.",
+      "description": "Première étape des instructions d'utilisation"
+    },
+    "popup_usage_step2": {
+      "message": "Écrivez votre message.",
+      "description": "Deuxième étape des instructions d'utilisation"
+    },
+    "popup_usage_step3": {
+      "message": "Appuyez sur Ctrl+Shift+K (Mac : Cmd+Shift+K) ou faites un clic droit et choisissez 'Relire'.",
+      "description": "Troisième étape des instructions d'utilisation"
+    },
+    "popup_link_text": {
+      "message": "Comment puis-je obtenir une clé API ?",
+      "description": "Texte du lien dans la fenêtre contextuelle"
     }
   }
-  

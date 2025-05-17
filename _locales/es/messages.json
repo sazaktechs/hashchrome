@@ -6,6 +6,45 @@
     "extension_description": {
       "message": "Revisa al instante tus errores gramaticales en la web.",
       "description": "La descripción de la extensión"
+    },
+    "popup_title": {
+      "message": "Corrector Gramatical Instantáneo",
+      "description": "Título del popup"
+    },
+    "popup_input_label": {
+      "message": "Tu clave API de OpenAI o Gemini",
+      "description": "Etiqueta para el campo de entrada en el popup"
+    },
+    "popup_save_button": {
+      "message": "Guardar clave API",
+      "description": "Botón para guardar la clave API en el popup"
+    },
+    "popup_check_button": {
+      "message": "Estado de la clave API",
+      "description": "Botón para verificar el estado de la clave API en el popup"
+    },
+    "popup_remove_button": {
+      "message": "Eliminar clave API",
+      "description": "Botón para eliminar la clave API en el popup"
+    },
+    "popup_usage_instructions": {
+      "message": "Cómo corregir",
+      "description": "Instrucciones de uso en el popup"
+    },
+    "popup_usage_step1": {
+      "message": "Guarda tu clave API.",
+      "description": "Primer paso en las instrucciones de uso"
+    },
+    "popup_usage_step2": {
+      "message": "Escribe tu mensaje.",
+      "description": "Segundo paso en las instrucciones de uso"
+    },
+    "popup_usage_step3": {
+      "message": "Presiona Ctrl+Shift+K (Mac: Cmd+Shift+K) o haz clic derecho y elige 'Corregir'.",
+      "description": "Tercer paso en las instrucciones de uso"
+    },
+    "popup_link_text": {
+      "message": "¿Cómo puedo obtener una clave API?",
+      "description": "Texto del enlace en el popup"
     }
   }
-  

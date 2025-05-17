@@ -6,5 +6,45 @@
   "extension_description": {
     "message": "Web’deki dilbilgisi hatalarınızı anında düzeltin.",
     "description": "Eklentinin açıklaması"
+  },
+  "popup_title": {
+    "message": "Anında Dilbilgisi Denetleyicisi",
+    "description": "Açılır pencerenin başlığı"
+  },
+  "popup_input_label": {
+    "message": "OpenAI veya Gemini API Anahtarınız",
+    "description": "Açılır penceredeki giriş alanı etiketi"
+  },
+  "popup_save_button": {
+    "message": "API Anahtarını Kaydet",
+    "description": "Açılır penceredeki API anahtarını kaydetme düğmesi"
+  },
+  "popup_check_button": {
+    "message": "API Anahtarı Durumu",
+    "description": "Açılır penceredeki API anahtarı durumunu kontrol etme düğmesi"
+  },
+  "popup_remove_button": {
+    "message": "API Anahtarını Kaldır",
+    "description": "Açılır penceredeki API anahtarını kaldırma düğmesi"
+  },
+  "popup_usage_instructions": {
+    "message": "Nasıl Düzeltme Yapılır",
+    "description": "Açılır penceredeki kullanım talimatları"
+  },
+  "popup_usage_step1": {
+    "message": "API anahtarınızı kaydedin.",
+    "description": "Kullanım talimatlarındaki ilk adım"
+  },
+  "popup_usage_step2": {
+    "message": "Mesajınızı yazın.",
+    "description": "Kullanım talimatlarındaki ikinci adım"
+  },
+  "popup_usage_step3": {
+    "message": "Ctrl+Shift+K (Mac: Cmd+Shift+K) tuşlarına basın veya sağ tıklayıp 'Düzelt' seçeneğini seçin.",
+    "description": "Kullanım talimatlarındaki üçüncü adım"
+  },
+  "popup_link_text": {
+    "message": "API Anahtarını Nasıl Alabilirim?",
+    "description": "Açılır penceredeki bağlantı metni"
   }
 }
