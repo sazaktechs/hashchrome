@@ -6,45 +6,6 @@
     "extension_description": {
       "message": "Korrigieren Sie Ihre Grammatikfehler im Web sofort.",
       "description": "Die Beschreibung der Erweiterung"
-    },
-    "popup_title": {
-      "message": "Sofortiger Grammatikprüfer",
-      "description": "Titel des Popups"
-    },
-    "popup_input_label": {
-      "message": "Ihr OpenAI- oder Gemini-API-Schlüssel",
-      "description": "Beschriftung des Eingabefelds im Popup"
-    },
-    "popup_save_button": {
-      "message": "API-Schlüssel speichern",
-      "description": "Schaltfläche zum Speichern des API-Schlüssels im Popup"
-    },
-    "popup_check_button": {
-      "message": "API-Schlüsselstatus",
-      "description": "Schaltfläche zum Überprüfen des API-Schlüsselstatus im Popup"
-    },
-    "popup_remove_button": {
-      "message": "API-Schlüssel entfernen",
-      "description": "Schaltfläche zum Entfernen des API-Schlüssels im Popup"
-    },
-    "popup_usage_instructions": {
-      "message": "Wie man Korrektur liest",
-      "description": "Nutzungsanweisungen im Popup"
-    },
-    "popup_usage_step1": {
-      "message": "Speichern Sie Ihren API-Schlüssel.",
-      "description": "Erster Schritt in den Nutzungsanweisungen"
-    },
-    "popup_usage_step2": {
-      "message": "Schreiben Sie Ihre Nachricht.",
-      "description": "Zweiter Schritt in den Nutzungsanweisungen"
-    },
-    "popup_usage_step3": {
-      "message": "Drücken Sie Strg+Shift+K (Mac: Cmd+Shift+K) oder klicken Sie mit der rechten Maustaste und wählen Sie 'Korrektur lesen'.",
-      "description": "Dritter Schritt in den Nutzungsanweisungen"
-    },
-    "popup_link_text": {
-      "message": "Wie bekomme ich einen API-Schlüssel?",
-      "description": "Linktext im Popup"
     }
   }
+  

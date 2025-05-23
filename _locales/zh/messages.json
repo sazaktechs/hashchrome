@@ -6,45 +6,6 @@
     "extension_description": {
       "message": "即时校对您在网页上的语法错误。",
       "description": "扩展的描述"
-    },
-    "popup_title": {
-      "message": "即时语法检查器",
-      "description": "弹出窗口的标题"
-    },
-    "popup_input_label": {
-      "message": "您的OpenAI或Gemini API密钥",
-      "description": "弹出窗口中输入字段的标签"
-    },
-    "popup_save_button": {
-      "message": "保存API密钥",
-      "description": "弹出窗口中保存API密钥的按钮"
-    },
-    "popup_check_button": {
-      "message": "API密钥状态",
-      "description": "弹出窗口中检查API密钥状态的按钮"
-    },
-    "popup_remove_button": {
-      "message": "删除API密钥",
-      "description": "弹出窗口中删除API密钥的按钮"
-    },
-    "popup_usage_instructions": {
-      "message": "如何校对",
-      "description": "弹出窗口中的使用说明"
-    },
-    "popup_usage_step1": {
-      "message": "保存您的API密钥。",
-      "description": "使用说明中的第一步"
-    },
-    "popup_usage_step2": {
-      "message": "写下您的消息。",
-      "description": "使用说明中的第二步"
-    },
-    "popup_usage_step3": {
-      "message": "按Ctrl+Shift+K（Mac：Cmd+Shift+K）或右键单击并选择“校对”。",
-      "description": "使用说明中的第三步"
-    },
-    "popup_link_text": {
-      "message": "如何获取API密钥？",
-      "description": "弹出窗口中的链接文本"
     }
   }
+  

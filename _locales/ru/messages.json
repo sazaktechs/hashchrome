@@ -6,45 +6,6 @@
     "extension_description": {
       "message": "Мгновенно исправляйте грамматические ошибки в интернете.",
       "description": "Описание расширения"
-    },
-    "popup_title": {
-      "message": "Мгновенный Грамматический Проверщик",
-      "description": "Заголовок всплывающего окна"
-    },
-    "popup_input_label": {
-      "message": "Ваш ключ API OpenAI или Gemini",
-      "description": "Метка для поля ввода в всплывающем окне"
-    },
-    "popup_save_button": {
-      "message": "Сохранить ключ API",
-      "description": "Кнопка для сохранения ключа API в всплывающем окне"
-    },
-    "popup_check_button": {
-      "message": "Статус ключа API",
-      "description": "Кнопка для проверки статуса ключа API в всплывающем окне"
-    },
-    "popup_remove_button": {
-      "message": "Удалить ключ API",
-      "description": "Кнопка для удаления ключа API в всплывающем окне"
-    },
-    "popup_usage_instructions": {
-      "message": "Как корректировать",
-      "description": "Инструкции по использованию во всплывающем окне"
-    },
-    "popup_usage_step1": {
-      "message": "Сохраните ваш ключ API.",
-      "description": "Первый шаг в инструкциях по использованию"
-    },
-    "popup_usage_step2": {
-      "message": "Напишите ваше сообщение.",
-      "description": "Второй шаг в инструкциях по использованию"
-    },
-    "popup_usage_step3": {
-      "message": "Нажмите Ctrl+Shift+K (Mac: Cmd+Shift+K) или щелкните правой кнопкой мыши и выберите 'Корректировать'.",
-      "description": "Третий шаг в инструкциях по использованию"
-    },
-    "popup_link_text": {
-      "message": "Как я могу получить ключ API?",
-      "description": "Текст ссылки во всплывающем окне"
     }
   }
+  

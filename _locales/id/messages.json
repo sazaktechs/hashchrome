@@ -6,45 +6,6 @@
     "extension_description": {
       "message": "Perbaiki kesalahan tata bahasa Anda di web secara instan.",
       "description": "Deskripsi ekstensi"
-    },
-    "popup_title": {
-      "message": "Pemeriksa Tata Bahasa Instan",
-      "description": "Judul popup"
-    },
-    "popup_input_label": {
-      "message": "Kunci API OpenAI atau Gemini Anda",
-      "description": "Label untuk bidang input di popup"
-    },
-    "popup_save_button": {
-      "message": "Simpan Kunci API",
-      "description": "Tombol untuk menyimpan kunci API di popup"
-    },
-    "popup_check_button": {
-      "message": "Status Kunci API",
-      "description": "Tombol untuk memeriksa status kunci API di popup"
-    },
-    "popup_remove_button": {
-      "message": "Hapus Kunci API",
-      "description": "Tombol untuk menghapus kunci API di popup"
-    },
-    "popup_usage_instructions": {
-      "message": "Cara Memeriksa Tata Bahasa",
-      "description": "Instruksi penggunaan di popup"
-    },
-    "popup_usage_step1": {
-      "message": "Simpan kunci API Anda.",
-      "description": "Langkah pertama dalam instruksi penggunaan"
-    },
-    "popup_usage_step2": {
-      "message": "Tulis pesan Anda.",
-      "description": "Langkah kedua dalam instruksi penggunaan"
-    },
-    "popup_usage_step3": {
-      "message": "Tekan Ctrl+Shift+K (Mac: Cmd+Shift+K) atau klik kanan dan pilih 'Periksa'.",
-      "description": "Langkah ketiga dalam instruksi penggunaan"
-    },
-    "popup_link_text": {
-      "message": "Bagaimana cara mendapatkan Kunci API?",
-      "description": "Teks tautan di popup"
     }
   }
+  
