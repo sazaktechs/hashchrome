@@ -6,45 +6,6 @@
     "extension_description": {
       "message": "ウェブ上の文法ミスを即時に校正します。",
       "description": "拡張機能の説明"
-    },
-    "popup_title": {
-      "message": "インスタント文法チェッカー",
-      "description": "ポップアップのタイトル"
-    },
-    "popup_input_label": {
-      "message": "あなたのOpenAIまたはGemini APIキー",
-      "description": "ポップアップの入力フィールドのラベル"
-    },
-    "popup_save_button": {
-      "message": "APIキーを保存",
-      "description": "ポップアップでAPIキーを保存するボタン"
-    },
-    "popup_check_button": {
-      "message": "APIキーのステータス",
-      "description": "ポップアップでAPIキーのステータスを確認するボタン"
-    },
-    "popup_remove_button": {
-      "message": "APIキーを削除",
-      "description": "ポップアップでAPIキーを削除するボタン"
-    },
-    "popup_usage_instructions": {
-      "message": "校正の方法",
-      "description": "ポップアップの使用方法"
-    },
-    "popup_usage_step1": {
-      "message": "APIキーを保存します。",
-      "description": "使用方法の最初のステップ"
-    },
-    "popup_usage_step2": {
-      "message": "メッセージを書きます。",
-      "description": "使用方法の2番目のステップ"
-    },
-    "popup_usage_step3": {
-      "message": "Ctrl+Shift+K（Mac: Cmd+Shift+K）を押すか、右クリックして「校正」を選択します。",
-      "description": "使用方法の3番目のステップ"
-    },
-    "popup_link_text": {
-      "message": "APIキーを取得するには？",
-      "description": "ポップアップのリンクテキスト"
     }
   }
+  

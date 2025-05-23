@@ -6,45 +6,6 @@
   "extension_description": {
     "message": "Instantly proofread your grammar mistakes across the web.",
     "description": "The description of the extension"
-  },
-  "popup_title": {
-    "message": "Instant Grammar Checker",
-    "description": "Title of the popup"
-  },
-  "popup_input_label": {
-    "message": "Your OpenAI or Gemini API Key",
-    "description": "Label for the input field in the popup"
-  },
-  "popup_save_button": {
-    "message": "Save API Key",
-    "description": "Button to save the API key in the popup"
-  },
-  "popup_check_button": {
-    "message": "API Key Status",
-    "description": "Button to check the API key status in the popup"
-  },
-  "popup_remove_button": {
-    "message": "Remove API Key",
-    "description": "Button to remove the API key in the popup"
-  },
-  "popup_usage_instructions": {
-    "message": "How to Proofread",
-    "description": "Usage instructions in the popup"
-  },
-  "popup_usage_step1": {
-    "message": "Save your API key.",
-    "description": "First step in the usage instructions"
-  },
-  "popup_usage_step2": {
-    "message": "Write your message.",
-    "description": "Second step in the usage instructions"
-  },
-  "popup_usage_step3": {
-    "message": "Press Ctrl+Shift+K (Mac: Cmd+Shift+K) or right-click and choose 'Proofread'.",
-    "description": "Third step in the usage instructions"
-  },
-  "popup_link_text": {
-    "message": "How can I get an API Key?",
-    "description": "Link text in the popup"
   }
+  
 }

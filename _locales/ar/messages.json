@@ -6,45 +6,6 @@
     "extension_description": {
       "message": "صحح أخطاء القواعد الخاصة بك على الإنترنت فوراً",
       "description": "وصف الإضافة"
-    },
-    "popup_title": {
-      "message": "مدقق القواعد الفورية",
-      "description": "عنوان النافذة المنبثقة"
-    },
-    "popup_input_label": {
-      "message": "مفتاح API الخاص بـ OpenAI أو Gemini",
-      "description": "تسمية حقل الإدخال في النافذة المنبثقة"
-    },
-    "popup_save_button": {
-      "message": "حفظ مفتاح API",
-      "description": "زر حفظ مفتاح API في النافذة المنبثقة"
-    },
-    "popup_check_button": {
-      "message": "حالة مفتاح API",
-      "description": "زر التحقق من حالة مفتاح API في النافذة المنبثقة"
-    },
-    "popup_remove_button": {
-      "message": "إزالة مفتاح API",
-      "description": "زر إزالة مفتاح API في النافذة المنبثقة"
-    },
-    "popup_usage_instructions": {
-      "message": "كيفية التدقيق اللغوي",
-      "description": "تعليمات الاستخدام في النافذة المنبثقة"
-    },
-    "popup_usage_step1": {
-      "message": "احفظ مفتاح API الخاص بك.",
-      "description": "الخطوة الأولى في تعليمات الاستخدام"
-    },
-    "popup_usage_step2": {
-      "message": "اكتب رسالتك.",
-      "description": "الخطوة الثانية في تعليمات الاستخدام"
-    },
-    "popup_usage_step3": {
-      "message": "اضغط على Ctrl+Shift+K (Mac: Cmd+Shift+K) أو انقر بزر الماوس الأيمن واختر 'تدقيق'.",
-      "description": "الخطوة الثالثة في تعليمات الاستخدام"
-    },
-    "popup_link_text": {
-      "message": "كيف يمكنني الحصول على مفتاح API؟",
-      "description": "نص الرابط في النافذة المنبثقة"
     }
   }
+  
