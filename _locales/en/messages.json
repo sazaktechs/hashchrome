@@ -12,7 +12,7 @@
     "description": "Title of the popup"
   },
   "popup_input_label": {
-    "message": "Your OpenAI or Gemini API Key",
+    "message": "OpenAI or Gemini API Key",
     "description": "Label for the input field in the popup"
   },
   "popup_save_button": {

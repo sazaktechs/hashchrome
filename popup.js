@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+  document.getElementById('title').textContent = chrome.i18n.getMessage("popup_title");
+  document.getElementById('input-label').textContent = chrome.i18n.getMessage("popup_input_label");
+  document.getElementById('apiKeyInput').placeholder = chrome.i18n.getMessage("popup_input_label");
+  document.getElementById('saveApiKey').textContent = chrome.i18n.getMessage("popup_save_button");
+  document.getElementById('checkApiKey').textContent = chrome.i18n.getMessage("popup_check_button");
+  document.getElementById('removeApiKey').textContent = chrome.i18n.getMessage("popup_remove_button");
+  document.querySelector('#usage h3').textContent = chrome.i18n.getMessage("popup_usage_instructions");
+  document.querySelectorAll('#usage ol li')[0].textContent = chrome.i18n.getMessage("popup_usage_step1");
+  document.querySelectorAll('#usage ol li')[1].textContent = chrome.i18n.getMessage("popup_usage_step2");
+  document.querySelectorAll('#usage ol li')[2].textContent = chrome.i18n.getMessage("popup_usage_step3");
+
+
   const saveApiKey = document.getElementById('saveApiKey');
   const checkApiKey = document.getElementById('checkApiKey');
   const removeApiKey = document.getElementById('removeApiKey');
@@ -210,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('message').style.color = "red";
       document.getElementById("message").textContent = "This field cannot be empty!";
     }
-    else if (!(/^sk-proj-[A-Za-z0-9_-]{30,}$/.test(apiKeyValue) || /^[a-zA-Z0-9]{30,}$/.test(apiKeyValue))) {
+    else if (!(/^sk-proj-[A-Za-z0-9_-]{30,}$/.test(apiKeyValue) || /^[a-zA-Z0-9_-]{30,}$/.test(apiKeyValue))) {
       messageContainer.style.display = "grid";
       messageContainer.style.visibility = 'visible';
       iconMessage.textContent = "\u26A0"; // Unicode escape for ⚠️
@@ -223,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
       try {
         if (/^sk-proj-[A-Za-z0-9_-]{30,}$/.test(apiKeyValue)) {
           model = "gpt-4o-mini";
-        } else if (/^[a-zA-Z0-9]{30,}$/.test(apiKeyValue)) {
+        } else if (/^[a-zA-Z0-9_-]{30,}$/.test(apiKeyValue)) {
           model = "gemini-2.0-flash-lite-preview-02-05";
         }
       } catch (error) {
